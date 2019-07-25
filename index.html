@@ -396,7 +396,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-tow-1/">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-four/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao">
@@ -416,7 +416,456 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/java-tow-1/" class="post-title-link" itemprop="url">java面试题11-20【转】</a>
+                <a href="/java-four/" class="post-title-link" itemprop="url">java面试题31-40【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-25 16:00:35 / 修改时间：15:55:50" itemprop="dateCreated datePublished" datetime="2019-07-25T16:00:35+08:00">2019-07-25</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="31-迭代器-Iterator-是什么？"><a href="#31-迭代器-Iterator-是什么？" class="headerlink" title="31. 迭代器 Iterator 是什么？"></a>31. 迭代器 Iterator 是什么？</h2><blockquote>
+<p>Iterator 接口提供遍历任何 Collection 的接口。我们可以从一个 Collection 中使用迭代器方法来获取迭代器实例。迭代器取代了 Java 集合框架中的 Enumeration，迭代器允许调用者在迭代过程中移除元素。</p>
+</blockquote>
+<h2 id="32-Iterator-怎么使用？有什么特点？"><a href="#32-Iterator-怎么使用？有什么特点？" class="headerlink" title="32. Iterator 怎么使用？有什么特点？"></a>32. Iterator 怎么使用？有什么特点？</h2><blockquote>
+<p>Iterator 使用代码如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Iterator&lt;String&gt; it = list. iterator();</span><br><span class="line"><span class="keyword">while</span>(it. hasNext())&#123;</span><br><span class="line">  String obj = it. next();</span><br><span class="line">  System. out. println(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Iterator 的特点是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 ConcurrentModificationException 异常。</p>
+</blockquote>
+<h2 id="33-Iterator-和-ListIterator-有什么区别？"><a href="#33-Iterator-和-ListIterator-有什么区别？" class="headerlink" title="33. Iterator 和 ListIterator 有什么区别？"></a>33. Iterator 和 ListIterator 有什么区别？</h2><blockquote>
+<ul>
+<li>Iterator 可以遍历 Set 和 List 集合，而 ListIterator 只能遍历 List。</li>
+<li>Iterator 只能单向遍历，而 ListIterator 可以双向遍历（向前/后遍历）。</li>
+<li>ListIterator 从 Iterator 接口继承，然后添加了一些额外的功能，比如添加一个元素、替换一个元素、获取前面或后面元素的索引位置。</li>
+</ul>
+</blockquote>
+<h2 id="34-怎么确保一个集合不能被修改？"><a href="#34-怎么确保一个集合不能被修改？" class="headerlink" title="34. 怎么确保一个集合不能被修改？"></a>34. 怎么确保一个集合不能被修改？</h2><blockquote>
+<p>可以使用 Collections. unmodifiableCollection(Collection c) 方法来创建一个只读集合，这样改变集合的任何操作都会抛出 Java. lang. UnsupportedOperationException 异常。<br>示例代码如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list. add(<span class="string">"x"</span>);</span><br><span class="line">Collection&lt;String&gt; clist = Collections. unmodifiableCollection(list);</span><br><span class="line">clist. add(<span class="string">"y"</span>); <span class="comment">// 运行时此行报错</span></span><br><span class="line">System. out. println(list. size());</span><br></pre></td></tr></table></figure>
+
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="35-并行和并发有什么区别？"><a href="#35-并行和并发有什么区别？" class="headerlink" title="35. 并行和并发有什么区别？"></a>35. 并行和并发有什么区别？</h2><blockquote>
+<ul>
+<li>并行：多个处理器或多核处理器同时处理多个任务。</li>
+<li>并发：多个任务在同一个 CPU 核上，按细分的时间片轮流(交替)执行，从逻辑上来看那些任务是同时执行。<br>如下图：<br><img src="1.png" alt></li>
+<li>并发 = 两个队列和一台咖啡机。</li>
+<li>并行 = 两个队列和两台咖啡机。</li>
+</ul>
+</blockquote>
+<h2 id="36-线程和进程的区别？"><a href="#36-线程和进程的区别？" class="headerlink" title="36. 线程和进程的区别？"></a>36. 线程和进程的区别？</h2><blockquote>
+<p>一个程序下至少有一个进程，一个进程下至少有一个线程，一个进程下也可以有多个线程来增加程序的执行速度。</p>
+</blockquote>
+<h2 id="37-守护线程是什么？"><a href="#37-守护线程是什么？" class="headerlink" title="37. 守护线程是什么？"></a>37. 守护线程是什么？</h2><blockquote>
+<p>守护线程是运行在后台的一种特殊进程。它独立于控制终端并且周期性地执行某种任务或等待处理某些发生的事件。在 Java 中垃圾回收线程就是特殊的守护线程。</p>
+</blockquote>
+<h2 id="38-创建线程有哪几种方式？"><a href="#38-创建线程有哪几种方式？" class="headerlink" title="38. 创建线程有哪几种方式？"></a>38. 创建线程有哪几种方式？</h2><blockquote>
+<p>创建线程有三种方式：</p>
+<ul>
+<li>继承 Thread 重写 run 方法；</li>
+<li>实现 Runnable 接口；</li>
+<li>实现 Callable 接口。</li>
+</ul>
+</blockquote>
+<h2 id="39-说一下-runnable-和-callable-有什么区别？"><a href="#39-说一下-runnable-和-callable-有什么区别？" class="headerlink" title="39. 说一下 runnable 和 callable 有什么区别？"></a>39. 说一下 runnable 和 callable 有什么区别？</h2><blockquote>
+<p>runnable 没有返回值，callable 可以拿到有返回值，callable 可以看作是 runnable 的补充。</p>
+</blockquote>
+<h2 id="40-线程有哪些状态？"><a href="#40-线程有哪些状态？" class="headerlink" title="40. 线程有哪些状态？"></a>40. 线程有哪些状态？</h2><blockquote>
+<p>线程的状态：</p>
+<ul>
+<li>NEW 尚未启动</li>
+<li>RUNNABLE 正在执行中</li>
+<li>BLOCKED 阻塞的（被同步锁或者IO锁阻塞）</li>
+<li>WAITING 永久等待状态</li>
+<li>TIMED_WAITING 等待指定的时间重新被唤醒的状态</li>
+<li>TERMINATED 执行完成</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-three/" class="post-title-link" itemprop="url">java面试题21-30【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-25 16:00:35 / 修改时间：15:47:11" itemprop="dateCreated datePublished" datetime="2019-07-25T16:00:35+08:00">2019-07-25</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="21-HashMap-和-Hashtable-有什么区别？"><a href="#21-HashMap-和-Hashtable-有什么区别？" class="headerlink" title="21. HashMap 和 Hashtable 有什么区别？"></a>21. HashMap 和 Hashtable 有什么区别？</h2><blockquote>
+<ul>
+<li>存储：HashMap 运行 key 和 value 为 null，而 Hashtable 不允许。</li>
+<li>线程安全：Hashtable 是线程安全的，而 HashMap 是非线程安全的。</li>
+<li>推荐使用：在 Hashtable 的类注释可以看到，Hashtable 是保留类不建议使用，推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用 ConcurrentHashMap 替代。</li>
+</ul>
+</blockquote>
+<h2 id="22-如何决定使用-HashMap-还是-TreeMap？"><a href="#22-如何决定使用-HashMap-还是-TreeMap？" class="headerlink" title="22. 如何决定使用 HashMap 还是 TreeMap？"></a>22. 如何决定使用 HashMap 还是 TreeMap？</h2><blockquote>
+<p>对于在 Map 中插入、删除、定位一个元素这类操作，HashMap 是最好的选择，因为相对而言 HashMap 的插入会更快，但如果你要对一个 key 集合进行有序的遍历，那 TreeMap 是更好的选择。</p>
+</blockquote>
+<h2 id="23-说一下-HashMap-的实现原理？"><a href="#23-说一下-HashMap-的实现原理？" class="headerlink" title="23. 说一下 HashMap 的实现原理？"></a>23. 说一下 HashMap 的实现原理？</h2><blockquote>
+<p>HashMap 基于 Hash 算法实现的，我们通过 put(key,value)存储，get(key)来获取。当传入 key 时，HashMap 会根据 key. hashCode() 计算出 hash 值，根据 hash 值将 value 保存在 bucket 里。当计算出的 hash 值相同时，我们称之为 hash 冲突，HashMap 的做法是用链表和红黑树存储相同 hash 值的 value。当 hash 冲突的个数比较少时，使用链表否则使用红黑树。</p>
+</blockquote>
+<h2 id="24-说一下-HashSet-的实现原理？"><a href="#24-说一下-HashSet-的实现原理？" class="headerlink" title="24. 说一下 HashSet 的实现原理？"></a>24. 说一下 HashSet 的实现原理？</h2><blockquote>
+<p>HashSet 是基于 HashMap 实现的，HashSet 底层使用 HashMap 来保存所有元素，因此 HashSet 的实现比较简单，相关 HashSet 的操作，基本上都是直接调用底层 HashMap 的相关方法来完成，HashSet 不允许重复的值。</p>
+</blockquote>
+<h2 id="25-ArrayList-和-LinkedList-的区别是什么？"><a href="#25-ArrayList-和-LinkedList-的区别是什么？" class="headerlink" title="25. ArrayList 和 LinkedList 的区别是什么？"></a>25. ArrayList 和 LinkedList 的区别是什么？</h2><blockquote>
+<ul>
+<li>数据结构实现：ArrayList 是动态数组的数据结构实现，而 LinkedList 是双&gt;- 向链表的数据结构实现。</li>
+<li>随机访问效率：ArrayList 比 LinkedList 在随机访问的时候效率要高，因为 LinkedList 是线性的数据存储方式，所以需要移动指针从前往后依次查找。</li>
+<li>增加和删除效率：在非首尾的增加和删除操作，LinkedList 要比 ArrayList 效率要高，因为 ArrayList 增删操作要影响数组内的其他数据的下标。<br>综合来说，在需要频繁读取集合中的元素时，更推荐使用 ArrayList，而在插入和删除操作较多时，更推荐使用 LinkedList。</li>
+</ul>
+</blockquote>
+<h2 id="26-如何实现数组和-List-之间的转换？"><a href="#26-如何实现数组和-List-之间的转换？" class="headerlink" title="26. 如何实现数组和 List 之间的转换？"></a>26. 如何实现数组和 List 之间的转换？</h2><blockquote>
+<ul>
+<li>数组转 List：使用 Arrays. asList(array) 进行转换。</li>
+<li>List 转数组：使用 List 自带的 toArray() 方法。</li>
+<li>代码示例：</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// list to array</span></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">list. add(<span class="string">"王磊"</span>);</span><br><span class="line">list. add(<span class="string">"的博客"</span>);</span><br><span class="line">list. toArray();</span><br><span class="line"><span class="comment">// array to list</span></span><br><span class="line">String[] array = <span class="keyword">new</span> String[]&#123;<span class="string">"王磊"</span>,<span class="string">"的博客"</span>&#125;;</span><br><span class="line">Arrays. asList(array);</span><br></pre></td></tr></table></figure>
+
+<h2 id="27-ArrayList-和-Vector-的区别是什么？"><a href="#27-ArrayList-和-Vector-的区别是什么？" class="headerlink" title="27. ArrayList 和 Vector 的区别是什么？"></a>27. ArrayList 和 Vector 的区别是什么？</h2><blockquote>
+<ul>
+<li>线程安全：Vector 使用了 Synchronized 来实现线程同步，是线程安全的，而 ArrayList 是非线程安全的。</li>
+<li>性能：ArrayList 在性能方面要优于 Vector。</li>
+<li>扩容：ArrayList 和 Vector 都会根据实际的需要动态的调整容量，只不过在 Vector 扩容每次会增加 1 倍，而 ArrayList 只会增加 50%。</li>
+</ul>
+</blockquote>
+<h2 id="28-Array-和-ArrayList-有何区别？"><a href="#28-Array-和-ArrayList-有何区别？" class="headerlink" title="28. Array 和 ArrayList 有何区别？"></a>28. Array 和 ArrayList 有何区别？</h2><blockquote>
+<ul>
+<li>Array 可以存储基本数据类型和对象，ArrayList 只能存储对象。</li>
+<li>Array 是指定固定大小的，而 ArrayList 大小是自动扩展的。</li>
+<li>Array 内置方法没有 ArrayList 多，比如 addAll、removeAll、iteration 等方法只有 ArrayList 有。</li>
+</ul>
+</blockquote>
+<h2 id="29-在-Queue-中-poll-和-remove-有什么区别？"><a href="#29-在-Queue-中-poll-和-remove-有什么区别？" class="headerlink" title="29. 在 Queue 中 poll()和 remove()有什么区别？"></a>29. 在 Queue 中 poll()和 remove()有什么区别？</h2><blockquote>
+<ul>
+<li>相同点：都是返回第一个元素，并在队列中删除返回的对象。</li>
+<li>不同点：如果没有元素 poll()会返回 null，而 remove()会直接抛出 NoSuchElementException 异常。</li>
+<li>代码示例：</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;String&gt; queue = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">queue. offer(<span class="string">"string"</span>); <span class="comment">// add</span></span><br><span class="line">System. out. println(queue. poll());</span><br><span class="line">System. out. println(queue. remove());</span><br><span class="line">System. out. println(queue. size());</span><br></pre></td></tr></table></figure>
+
+<h2 id="30-哪些集合类是线程安全的？"><a href="#30-哪些集合类是线程安全的？" class="headerlink" title="30. 哪些集合类是线程安全的？"></a>30. 哪些集合类是线程安全的？</h2><blockquote>
+<p>Vector、Hashtable、Stack 都是线程安全的，而像 HashMap 则是非线程安全的，不过在 JDK 1.5 之后随着 Java. util. concurrent 并发包的出现，它们也有了自己对应的线程安全类，比如 HashMap 对应的线程安全类就是 ConcurrentHashMap。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-tow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-tow/" class="post-title-link" itemprop="url">java面试题11-20【转】</a>
               
             
           </h1>
@@ -528,7 +977,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/java-tow-1/#more" rel="contents">
+              <a class="btn" href="/java-tow/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -592,7 +1041,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-one-1/">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-one/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao">
@@ -612,7 +1061,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/java-one-1/" class="post-title-link" itemprop="url">java面试题1-10【转】</a>
+                <a href="/java-one/" class="post-title-link" itemprop="url">java面试题1-10【转】</a>
               
             
           </h1>
@@ -652,7 +1101,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-25 11:05:47" itemprop="dateModified" datetime="2019-07-25T11:05:47+08:00">2019-07-25</time>
+                <time title="修改时间：2019-07-25 15:41:14" itemprop="dateModified" datetime="2019-07-25T15:41:14+08:00">2019-07-25</time>
               </span>
             
           
@@ -732,7 +1181,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/java-one-1/#more" rel="contents">
+              <a class="btn" href="/java-one/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -825,7 +1274,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -930,7 +1379,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.2k字</span>
+  <span class="post-count">博客全站共3.9k字</span>
 </div>
 
         
