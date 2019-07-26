@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ssztzzt.github.io/"/>
-  <updated>2019-07-25T07:55:50.304Z</updated>
+  <updated>2019-07-26T08:47:16.607Z</updated>
   <id>http://ssztzzt.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java面试题41-50【转】</title>
+    <link href="http://ssztzzt.github.io/java-five/"/>
+    <id>http://ssztzzt.github.io/java-five/</id>
+    <published>2019-07-26T09:00:35.000Z</published>
+    <updated>2019-07-26T08:47:16.607Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="41-sleep-和-wait-有什么区别？"><a href="#41-sleep-和-wait-有什么区别？" class="headerlink" title="41. sleep() 和 wait() 有什么区别？"></a>41. sleep() 和 wait() 有什么区别？</h2><blockquote><ul><li>类的不同：sleep() 来自 Thread，wait() 来自 Object。</li><li>释放锁：sleep() 不释放锁；wait() 释放锁。</li><li>用法不同：sleep() 时间到会自动恢复；wait() 可以使用 notify()/notifyAll()直接唤醒。</li></ul></blockquote><h2 id="42-notify-和-notifyAll-有什么区别？"><a href="#42-notify-和-notifyAll-有什么区别？" class="headerlink" title="42. notify()和 notifyAll()有什么区别？"></a>42. notify()和 notifyAll()有什么区别？</h2><blockquote><p>notifyAll()会唤醒所有的线程，notify()之后唤醒一个线程。notifyAll() 调用后，会将全部线程由等待池移到锁池，然后参与锁的竞争，竞争成功则继续执行，如果不成功则留在锁池等待锁被释放后再次参与竞争。而 notify()只会唤醒一个线程，具体唤醒哪一个线程由虚拟机控制。</p></blockquote><h2 id="43-线程的-run-和-start-有什么区别？"><a href="#43-线程的-run-和-start-有什么区别？" class="headerlink" title="43. 线程的 run() 和 start() 有什么区别？"></a>43. 线程的 run() 和 start() 有什么区别？</h2><blockquote><p>start() 方法用于启动线程，run() 方法用于执行线程的运行时代码。run() 可以重复调用，而 start() 只能调用一次。</p></blockquote><h2 id="44-创建线程池有哪几种方式？"><a href="#44-创建线程池有哪几种方式？" class="headerlink" title="44. 创建线程池有哪几种方式？"></a>44. 创建线程池有哪几种方式？</h2><blockquote><p>线程池创建有七种方式，最核心的是最后一种：</p><ul><li>newSingleThreadExecutor()：它的特点在于工作线程数目被限制为 1，操作一个无界的工作队列，所以它保证了所有任务的都是被顺序执行，最多会有一个任务处于活动状态，并且不允许使用者改动线程池实例，因此可以避免其改变线程数目；</li><li>newCachedThreadPool()：它是一种用来处理大量短时间工作任务的线程池，具有几个鲜明特点：它会试图缓存线程并重用，当无缓存线程可用时，就会创建新的工作线程；如果线程闲置的时间超过 60 秒，则被终止并移出缓存；长时间闲置时，这种线程池，不会消耗什么资源。其内部使用 SynchronousQueue 作为工作队列；</li><li>newFixedThreadPool(int nThreads)：重用指定数目（nThreads）的线程，其背后使用的是无界的工作队列，任何时候最多有 nThreads 个工作线程是活动的。这意味着，如果任务数量超过了活动队列数目，将在工作队列中等待空闲线程出现；如果有工作线程退出，将会有新的工作线程被创建，以补足指定的数目 nThreads；</li><li>newSingleThreadScheduledExecutor()：创建单线程池，返回 ScheduledExecutorService，可以进行定时或周期性的工作调度；</li><li>newScheduledThreadPool(int corePoolSize)：和newSingleThreadScheduledExecutor()类似，创建的是个 ScheduledExecutorService，可以进行定时或周期性的工作调度，区别在于单一工作线程还是多个工作线程；</li><li>newWorkStealingPool(int parallelism)：这是一个经常被人忽略的线程池，Java 8 才加入这个创建方法，其内部会构建ForkJoinPool，利用Work-Stealing算法，并行地处理任务，不保证处理顺序；</li><li>ThreadPoolExecutor()：是最原始的线程池创建，上面1-3创建方式都是对ThreadPoolExecutor的封装。</li></ul></blockquote><h2 id="45-线程池都有哪些状态？"><a href="#45-线程池都有哪些状态？" class="headerlink" title="45. 线程池都有哪些状态？"></a>45. 线程池都有哪些状态？</h2><blockquote><ul><li>RUNNING：这是最正常的状态，接受新的任务，处理等待队列中的任务。</li><li>SHUTDOWN：不接受新的任务提交，但是会继续处理等待队列中的任务。</li><li>STOP：不接受新的任务提交，不再处理等待队列中的任务，中断正在执行任务的线程。</li><li>TIDYING：所有的任务都销毁了，workCount 为 0，线程池的状态在转换为 TIDYING 状态时，会执行钩子方法 terminated()。</li><li>TERMINATED：terminated()方法结束后，线程池的状态就会变成这个。</li></ul></blockquote><h2 id="46-线程池中-submit-和-execute-方法有什么区别？"><a href="#46-线程池中-submit-和-execute-方法有什么区别？" class="headerlink" title="46. 线程池中 submit() 和 execute() 方法有什么区别？"></a>46. 线程池中 submit() 和 execute() 方法有什么区别？</h2><blockquote><ul><li>execute()：只能执行 Runnable 类型的任务。</li><li>submit()：可以执行 Runnable 和 Callable 类型的任务。</li><li>Callable 类型的任务可以获取执行的返回值，而 Runnable 执行无返回值。</li></ul></blockquote><h2 id="47-在-Java-程序中怎么保证多线程的运行安全？"><a href="#47-在-Java-程序中怎么保证多线程的运行安全？" class="headerlink" title="47. 在 Java 程序中怎么保证多线程的运行安全？"></a>47. 在 Java 程序中怎么保证多线程的运行安全？</h2><blockquote><ul><li>方法一：使用安全类，比如 Java. util. concurrent 下的类。</li><li>方法二：使用自动锁 synchronized。</li><li>方法三：使用手动锁 Lock。</li><li>手动锁 Java 示例代码如下：</li></ul></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Lock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line">lock. lock();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System. out. println(<span class="string">"获得锁"</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    System. out. println(<span class="string">"释放锁"</span>);</span><br><span class="line">    lock. unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="48-多线程中-synchronized-锁升级的原理是什么？"><a href="#48-多线程中-synchronized-锁升级的原理是什么？" class="headerlink" title="48. 多线程中 synchronized 锁升级的原理是什么？"></a>48. 多线程中 synchronized 锁升级的原理是什么？</h2><blockquote><p>synchronized 锁升级原理：在锁对象的对象头里面有一个 threadid 字段，在第一次访问的时候 threadid 为空，jvm 让其持有偏向锁，并将 threadid 设置为其线程 id，再次进入的时候会先判断 threadid 是否与其线程 id 一致，如果一致则可以直接使用此对象，如果不一致，则升级偏向锁为轻量级锁，通过自旋循环一定次数来获取锁，执行一定次数之后，如果还没有正常获取到要使用的对象，此时就会把锁从轻量级升级为重量级锁，此过程就构成了 synchronized 锁的升级。<br>锁的升级的目的：锁升级是为了减低了锁带来的性能消耗。在 Java 6 之后优化 synchronized 的实现方式，使用了偏向锁升级为轻量级锁再升级到重量级锁的方式，从而减低了锁带来的性能消耗。</p></blockquote><h2 id="49-什么是死锁？"><a href="#49-什么是死锁？" class="headerlink" title="49. 什么是死锁？"></a>49. 什么是死锁？</h2><blockquote><p>当线程 A 持有独占锁a，并尝试去获取独占锁 b 的同时，线程 B 持有独占锁 b，并尝试获取独占锁 a 的情况下，就会发生 AB 两个线程由于互相持有对方需要的锁，而发生的阻塞现象，我们称为死锁。</p></blockquote><h2 id="50-怎么防止死锁？"><a href="#50-怎么防止死锁？" class="headerlink" title="50. 怎么防止死锁？"></a>50. 怎么防止死锁？</h2><blockquote><ul><li>尽量使用 tryLock(long timeout, TimeUnit unit)的方法(ReentrantLock、ReentrantReadWriteLock)，设置超时时间，超时可以退出防止死锁。</li><li>尽量使用 Java. util. concurrent 并发类代替自己手写锁。</li><li>尽量降低锁的使用粒度，尽量不要几个功能用同一把锁。</li><li>尽量减少同步的代码块。</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;41-sleep-和-wait-有什么区别？&quot;&gt;&lt;a href=&quot;#41-sleep-和-wait-有什么区别？&quot; class=&quot;headerlink&quot; title=&quot;41. sleep() 和 wait() 有什么区别？&quot;&gt;&lt;/a&gt;41. sleep() 和 w
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://ssztzzt.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://ssztzzt.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java面试题51-60【转】</title>
+    <link href="http://ssztzzt.github.io/java-six/"/>
+    <id>http://ssztzzt.github.io/java-six/</id>
+    <published>2019-07-26T09:00:35.000Z</published>
+    <updated>2019-07-26T08:53:12.711Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="51-ThreadLocal-是什么？有哪些使用场景？"><a href="#51-ThreadLocal-是什么？有哪些使用场景？" class="headerlink" title="51. ThreadLocal 是什么？有哪些使用场景？"></a>51. ThreadLocal 是什么？有哪些使用场景？</h2><blockquote><p>ThreadLocal 为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。<br>ThreadLocal 的经典使用场景是数据库连接和 session 管理等。</p></blockquote><h2 id="52-说一下-synchronized-底层实现原理？"><a href="#52-说一下-synchronized-底层实现原理？" class="headerlink" title="52. 说一下 synchronized 底层实现原理？"></a>52. 说一下 synchronized 底层实现原理？</h2><blockquote><p>synchronized 是由一对 monitorenter/monitorexit 指令实现的，monitor 对象是同步的基本实现单元。在 Java 6 之前，monitor 的实现完全是依靠操作系统内部的互斥锁，因为需要进行用户态到内核态的切换，所以同步操作是一个无差别的重量级操作，性能也很低。但在 Java 6 的时候，Java 虚拟机 对此进行了大刀阔斧地改进，提供了三种不同的 monitor 实现，也就是常说的三种不同的锁：偏向锁（Biased Locking）、轻量级锁和重量级锁，大大改进了其性能。</p></blockquote><h2 id="53-synchronized-和-volatile-的区别是什么？"><a href="#53-synchronized-和-volatile-的区别是什么？" class="headerlink" title="53. synchronized 和 volatile 的区别是什么？"></a>53. synchronized 和 volatile 的区别是什么？</h2><blockquote><ul><li>volatile 是变量修饰符；synchronized 是修饰类、方法、代码段。</li><li>volatile 仅能实现变量的修改可见性，不能保证原子性；而 synchronized 则可以保证变量的修改可见性和原子性。</li><li>volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。</li></ul></blockquote><h2 id="54-synchronized-和-Lock-有什么区别？"><a href="#54-synchronized-和-Lock-有什么区别？" class="headerlink" title="54. synchronized 和 Lock 有什么区别？"></a>54. synchronized 和 Lock 有什么区别？</h2><blockquote><ul><li>synchronized 可以给类、方法、代码块加锁；而 lock 只能给代码块加锁。</li><li>synchronized 不需要手动获取锁和释放锁，使用简单，发生异常会自动释放锁，不会造成死锁；而 lock 需要自己加锁和释放锁，如果使用不当没有 unLock()去释放锁就会造成死锁。</li><li>通过 Lock 可以知道有没有成功获取锁，而 synchronized 却无法办到。</li></ul></blockquote><h2 id="55-synchronized-和-ReentrantLock-区别是什么？"><a href="#55-synchronized-和-ReentrantLock-区别是什么？" class="headerlink" title="55. synchronized 和 ReentrantLock 区别是什么？"></a>55. synchronized 和 ReentrantLock 区别是什么？</h2><blockquote><ul><li>synchronized 早期的实现比较低效，对比 ReentrantLock，大多数场景性能都相差较大，但是在 Java 6 中对 synchronized 进行了非常多的改进。</li><li>主要区别如下：</li><li>ReentrantLock 使用起来比较灵活，但是必须有释放锁的配合动作；</li><li>ReentrantLock 必须手动获取与释放锁，而 synchronized 不需要手动释放和开启锁；</li><li>ReentrantLock 只适用于代码块锁，而 synchronized 可用于修饰方法、代码块等。</li><li>olatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。</li></ul></blockquote><h2 id="56-说一下-atomic-的原理？"><a href="#56-说一下-atomic-的原理？" class="headerlink" title="56. 说一下 atomic 的原理？"></a>56. 说一下 atomic 的原理？</h2><blockquote><ul><li>atomic 主要利用 CAS (Compare And Wwap) 和 volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。<br>反射</li></ul></blockquote><h2 id="57-什么是反射？"><a href="#57-什么是反射？" class="headerlink" title="57. 什么是反射？"></a>57. 什么是反射？</h2><blockquote><ul><li>反射是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制。</li></ul></blockquote><h2 id="58-什么是-Java-序列化？什么情况下需要序列化？"><a href="#58-什么是-Java-序列化？什么情况下需要序列化？" class="headerlink" title="58. 什么是 Java 序列化？什么情况下需要序列化？"></a>58. 什么是 Java 序列化？什么情况下需要序列化？</h2><blockquote><ul><li>Java 序列化是为了保存各种对象在内存中的状态，并且可以把保存的对象状态再读出来。<br>以下情况需要使用 Java 序列化：</li><li>想把的内存中的对象状态保存到一个文件中或者数据库中时候；</li><li>想用套接字在网络上传送对象的时候；</li><li>想通过RMI（远程方法调用）传输对象的时候。</li></ul></blockquote><h2 id="59-动态代理是什么？有哪些应用？"><a href="#59-动态代理是什么？有哪些应用？" class="headerlink" title="59. 动态代理是什么？有哪些应用？"></a>59. 动态代理是什么？有哪些应用？</h2><blockquote><p>动态代理是运行时动态生成代理类。<br>动态代理的应用有 spring aop、hibernate 数据查询、测试框架的后端 mock、rpc，Java注解对象获取等。</p></blockquote><h2 id="60-怎么实现动态代理？"><a href="#60-怎么实现动态代理？" class="headerlink" title="60. 怎么实现动态代理？"></a>60. 怎么实现动态代理？</h2><blockquote><p>DK 原生动态代理和 cglib 动态代理。JDK 原生动态代理是基于接口实现的，而 cglib 是基于继承当前类的子类实现的对象拷贝。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;51-ThreadLocal-是什么？有哪些使用场景？&quot;&gt;&lt;a href=&quot;#51-ThreadLocal-是什么？有哪些使用场景？&quot; class=&quot;headerlink&quot; title=&quot;51. ThreadLocal 是什么？有哪些使用场景？&quot;&gt;&lt;/a&gt;51. 
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://ssztzzt.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://ssztzzt.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>java面试题31-40【转】</title>
