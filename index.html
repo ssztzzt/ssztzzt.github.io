@@ -396,6 +396,1180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-ten/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-ten/" class="post-title-link" itemprop="url">java面试题91-100【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-28 17:30:35 / 修改时间：20:43:11" itemprop="dateCreated datePublished" datetime="2019-07-28T17:30:35+08:00">2019-07-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="91-解释一下什么是-aop？"><a href="#91-解释一下什么是-aop？" class="headerlink" title="91. 解释一下什么是 aop？"></a>91. 解释一下什么是 aop？</h2><blockquote>
+<p>aop 是面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。<br>简单来说就是统一处理某一“切面”（类）的问题的编程思想，比如统一处理日志、异常等。</p>
+</blockquote>
+<h2 id="92-解释一下什么是-ioc？"><a href="#92-解释一下什么是-ioc？" class="headerlink" title="92. 解释一下什么是 ioc？"></a>92. 解释一下什么是 ioc？</h2><blockquote>
+<p>ioc：Inversionof Control（中文：控制反转）是 spring 的核心，对于 spring 框架来说，就是由 spring 来负责控制对象的生命周期和对象间的关系。<br>简单来说，控制指的是当前对象对内部成员的控制权；控制反转指的是，这种控制权不由当前对象管理了，由其他（类,第三方容器）来管理。</p>
+</blockquote>
+<h2 id="93-spring-有哪些主要模块？"><a href="#93-spring-有哪些主要模块？" class="headerlink" title="93. spring 有哪些主要模块？"></a>93. spring 有哪些主要模块？</h2><blockquote>
+<ul>
+<li>spring core：框架的最基础部分，提供 ioc 和依赖注入特性。</li>
+<li>spring context：构建于 core 封装包基础上的 context 封装包，提供了一种框架式的对象访问方法。</li>
+<li>spring dao：Data Access Object 提供了JDBC的抽象层。</li>
+<li>spring aop：提供了面向切面的编程实现，让你可以自定义拦截器、切点等。</li>
+<li>spring Web：提供了针对 Web 开发的集成特性，例如文件上传，利用 servlet listeners 进行 ioc 容器初始化和针对 Web 的 ApplicationContext。</li>
+<li>spring Web mvc：spring 中的 mvc 封装包提供了 Web 应用的 Model-View-Controller（MVC）的实现。</li>
+</ul>
+</blockquote>
+<h2 id="94-spring-常用的注入方式有哪些？"><a href="#94-spring-常用的注入方式有哪些？" class="headerlink" title="94. spring 常用的注入方式有哪些？"></a>94. spring 常用的注入方式有哪些？</h2><blockquote>
+<ul>
+<li>setter 属性注入</li>
+<li>构造方法注入</li>
+<li>注解方式注入</li>
+</ul>
+</blockquote>
+<h2 id="95-spring-中的-bean-是线程安全的吗？"><a href="#95-spring-中的-bean-是线程安全的吗？" class="headerlink" title="95. spring 中的 bean 是线程安全的吗？"></a>95. spring 中的 bean 是线程安全的吗？</h2><blockquote>
+<p>spring 中的 bean 默认是单例模式，spring 框架并没有对单例 bean 进行多线程的封装处理。<br>实际上大部分时候 spring bean 无状态的（比如 dao 类），所有某种程度上来说 bean 也是安全的，但如果 bean 有状态的话（比如 view model 对象），那就要开发者自己去保证线程安全了，最简单的就是改变 bean 的作用域，把“singleton”变更为“prototype”，这样请求 bean 相当于 new Bean()了，所以就可以保证线程安全了。</p>
+<ul>
+<li>有状态就是有数据存储功能。</li>
+<li>无状态就是不会保存数据。</li>
+</ul>
+</blockquote>
+<h2 id="96-spring-支持几种-bean-的作用域？"><a href="#96-spring-支持几种-bean-的作用域？" class="headerlink" title="96. spring 支持几种 bean 的作用域？"></a>96. spring 支持几种 bean 的作用域？</h2><blockquote>
+<p>spring 支持 5 种作用域，如下：</p>
+<ul>
+<li>singleton：spring ioc 容器中只存在一个 bean 实例，bean 以单例模式存在，是系统默认值；</li>
+<li>prototype：每次从容器调用 bean 时都会创建一个新的示例，既每次 getBean()相当于执行 new Bean()操作；</li>
+<li>Web 环境下的作用域：</li>
+<li>request：每次 http 请求都会创建一个 bean；</li>
+<li>session：同一个 http session 共享一个 bean 实例；</li>
+<li>global-session：用于 portlet 容器，因为每个 portlet 有单独的<br>session，globalsession 提供一个全局性的 http session。<br>注意： 使用 prototype 作用域需要慎重的思考，因为频繁创建和销毁 bean 会带来很大的性能开销。</li>
+</ul>
+</blockquote>
+<h2 id="97-spring-自动装配-bean-有哪些方式？"><a href="#97-spring-自动装配-bean-有哪些方式？" class="headerlink" title="97. spring 自动装配 bean 有哪些方式？"></a>97. spring 自动装配 bean 有哪些方式？</h2><blockquote>
+<ul>
+<li>no：默认值，表示没有自动装配，应使用显式 bean 引用进行装配。</li>
+<li>byName：它根据 bean 的名称注入对象依赖项。</li>
+<li>byType：它根据类型注入对象依赖项。</li>
+<li>构造函数：通过构造函数来注入依赖项，需要设置大量的参数。</li>
+<li>autodetect：容器首先通过构造函数使用 autowire 装配，如果不能，则通过 byType 自动装配。</li>
+</ul>
+</blockquote>
+<h2 id="98-spring-事务实现方式有哪些？"><a href="#98-spring-事务实现方式有哪些？" class="headerlink" title="98. spring 事务实现方式有哪些？"></a>98. spring 事务实现方式有哪些？</h2><blockquote>
+<ul>
+<li>声明式事务：声明式事务也有两种实现方式，基于 xml 配置文件的方式和注解方式（在类上添加 @Transaction 注解）。</li>
+<li>编码方式：提供编码的形式管理和维护事务。</li>
+</ul>
+</blockquote>
+<h2 id="99-说一下-spring-的事务隔离？"><a href="#99-说一下-spring-的事务隔离？" class="headerlink" title="99. 说一下 spring 的事务隔离？"></a>99. 说一下 spring 的事务隔离？</h2><blockquote>
+<p>spring 有五大隔离级别，默认值为 ISOLATION_DEFAULT（使用数据库的设置），其他四个隔离级别和数据库的隔离级别一致：<br>ISOLATION_DEFAULT：用底层数据库的设置隔离级别，数据库设置的是什么我就用什么；<br>ISOLATIONREADUNCOMMITTED：未提交读，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）；<br>ISOLATIONREADCOMMITTED：提交读，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读），SQL server 的默认级别；<br>ISOLATIONREPEATABLEREAD：可重复读，保证多次读取同一个数据时，其值都和事务开始时候的内容是一致，禁止读取到别的事务未提交的数据（会造成幻读），MySQL 的默认级别；<br>ISOLATION_SERIALIZABLE：序列化，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。<br>脏读 ：表示一个事务能够读取另一个事务中还未提交的数据。比如，某个事务尝试插入记录 A，此时该事务还未提交，然后另一个事务尝试读取到了记录 A。<br>不可重复读 ：是指在一个事务内，多次读同一数据。<br>幻读 ：指同一个事务内多次查询返回的结果集不一样。比如同一个事务 A 第一次查询时候有 n 条记录，但是第二次同等条件下查询却有 n+1 条记录，这就好像产生了幻觉。发生幻读的原因也是另外一个事务新增或者删除或者修改了第一个事务结果集里面的数据，同一个记录的数据内容被修改了，所有数据行的记录就变多或者变少了。</p>
+</blockquote>
+<h2 id="100-说一下-spring-mvc-运行流程？"><a href="#100-说一下-spring-mvc-运行流程？" class="headerlink" title="100. 说一下 spring mvc 运行流程？"></a>100. 说一下 spring mvc 运行流程？</h2><blockquote>
+<ul>
+<li>spring mvc 先将请求发送给 DispatcherServlet。</li>
+<li>DispatcherServlet 查询一个或多个 HandlerMapping，找到处理请求的 Controller。</li>
+<li>DispatcherServlet 再把请求提交到对应的 Controller。</li>
+<li>Controller 进行业务逻辑处理后，会返回一个ModelAndView。</li>
+<li>Dispathcher 查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 对象指定的视图对象。</li>
+<li>视图对象负责渲染返回给客户端。</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-nine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-nine/" class="post-title-link" itemprop="url">java面试题81-90【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-28 17:00:35 / 修改时间：20:38:08" itemprop="dateCreated datePublished" datetime="2019-07-28T17:00:35+08:00">2019-07-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="81-简述-tcp-和-udp的区别？"><a href="#81-简述-tcp-和-udp的区别？" class="headerlink" title="81. 简述 tcp 和 udp的区别？"></a>81. 简述 tcp 和 udp的区别？</h2><blockquote>
+<p>tcp 和 udp 是 OSI 模型中的运输层中的协议。tcp 提供可靠的通信传输，而 &gt;udp 则常被用于让广播和细节控制交给应用的通信传输。<br>两者的区别大致如下：</p>
+<ul>
+<li>tcp 面向连接，udp 面向非连接即发送数据前不需要建立链接；</li>
+<li>tcp 提供可靠的服务（数据传输），udp 无法保证；</li>
+<li>tcp 面向字节流，udp 面向报文；</li>
+<li>tcp 数据传输慢，udp 数据传输快；</li>
+</ul>
+</blockquote>
+<h2 id="82-tcp-为什么要三次握手，两次不行吗？为什么？"><a href="#82-tcp-为什么要三次握手，两次不行吗？为什么？" class="headerlink" title="82. tcp 为什么要三次握手，两次不行吗？为什么？"></a>82. tcp 为什么要三次握手，两次不行吗？为什么？</h2><blockquote>
+<p>如果采用两次握手，那么只要服务器发出确认数据包就会建立连接，但由于客户端此时并未响应服务器端的请求，那此时服务器端就会一直在等待客户端，这样服务器端就白白浪费了一定的资源。若采用三次握手，服务器端没有收到来自客户端的再此确认，则就会知道客户端并没有要求建立请求，就不会浪费服务器的资源。</p>
+</blockquote>
+<h2 id="83-说一下-tcp-粘包是怎么产生的？"><a href="#83-说一下-tcp-粘包是怎么产生的？" class="headerlink" title="83. 说一下 tcp 粘包是怎么产生的？"></a>83. 说一下 tcp 粘包是怎么产生的？</h2><blockquote>
+<p>tcp 粘包可能发生在发送端或者接收端，分别来看两端各种产生粘包的原因：</p>
+<ul>
+<li>发送端粘包：发送端需要等缓冲区满才发送出去，造成粘包；</li>
+<li>接收方粘包：接收方不及时接收缓冲区的包，造成多个包接收。</li>
+</ul>
+</blockquote>
+<h2 id="84-OSI-的七层模型都有哪些？"><a href="#84-OSI-的七层模型都有哪些？" class="headerlink" title="84. OSI 的七层模型都有哪些？"></a>84. OSI 的七层模型都有哪些？</h2><blockquote>
+<ul>
+<li>物理层：利用传输介质为数据链路层提供物理连接，实现比特流的透明传输。</li>
+<li>数据链路层：负责建立和管理节点间的链路。</li>
+<li>网络层：通过路由选择算法，为报文或分组通过通信子网选择最适当的路径。</li>
+<li>传输层：向用户提供可靠的端到端的差错和流量控制，保证报文的正确传输。</li>
+<li>会话层：向两个实体的表示层提供建立和使用连接的方法。</li>
+<li>表示层：处理用户信息的表示问题，如编码、数据格式转换和加密解密等。</li>
+<li>应用层：直接向用户提供服务，完成用户希望在网络上完成的各种工作。</li>
+</ul>
+</blockquote>
+<h2 id="85-get-和-post-请求有哪些区别？"><a href="#85-get-和-post-请求有哪些区别？" class="headerlink" title="85. get 和 post 请求有哪些区别？"></a>85. get 和 post 请求有哪些区别？</h2><blockquote>
+<ul>
+<li>get 请求会被浏览器主动缓存，而 post 不会。</li>
+<li>get 传递参数有大小限制，而 post 没有。</li>
+<li>post 参数传输更安全，get 的参数会明文限制在 url 上，post 不会。</li>
+</ul>
+</blockquote>
+<h2 id="86-如何实现跨域？"><a href="#86-如何实现跨域？" class="headerlink" title="86. 如何实现跨域？"></a>86. 如何实现跨域？</h2><blockquote>
+<p>实现跨域有以下几种方案：</p>
+<ul>
+<li>服务器端运行跨域 设置 CORS 等于 *；</li>
+<li>在单个接口使用注解 @CrossOrigin 运行跨域；</li>
+<li>使用 jsonp 跨域；</li>
+</ul>
+</blockquote>
+<h2 id="87-说一下-JSONP-实现原理？"><a href="#87-说一下-JSONP-实现原理？" class="headerlink" title="87. 说一下 JSONP 实现原理？"></a>87. 说一下 JSONP 实现原理？</h2><blockquote>
+<p>jsonp：JSON with Padding，它是利用script标签的 src 连接可以访问不同源的特性，加载远程返回的“JS 函数”来执行的。  </p>
+</blockquote>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="88-说一下你熟悉的设计模式？"><a href="#88-说一下你熟悉的设计模式？" class="headerlink" title="88. 说一下你熟悉的设计模式？"></a>88. 说一下你熟悉的设计模式？</h2><blockquote>
+<ul>
+<li>单例模式：保证被创建一次，节省系统开销。</li>
+<li>工厂模式（简单工厂、抽象工厂）：解耦代码。</li>
+<li>观察者模式：定义了对象之间的一对多的依赖，这样一来，当一个对象改变时，它的所有的依赖者都会收到通知并自动更新。</li>
+<li>外观模式：提供一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层的接口，让子系统更容易使用。</li>
+<li>模版方法模式：定义了一个算法的骨架，而将一些步骤延迟到子类中，模版方法使得子类可以在不改变算法结构的情况下，重新定义算法的步骤。</li>
+<li>状态模式：允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。</li>
+</ul>
+</blockquote>
+<h2 id="89-简单工厂和抽象工厂有什么区别？"><a href="#89-简单工厂和抽象工厂有什么区别？" class="headerlink" title="89. 简单工厂和抽象工厂有什么区别？"></a>89. 简单工厂和抽象工厂有什么区别？</h2><blockquote>
+<ul>
+<li>简单工厂：用来生产同一等级结构中的任意产品，对于增加新的产品，无能为力。</li>
+<li>工厂方法：用来生产同一等级结构中的固定产品，支持增加任意产品。</li>
+<li>抽象工厂：用来生产不同产品族的全部产品，对于增加新的产品，无能为力；支持增加产品族。</li>
+</ul>
+</blockquote>
+<h1 id="Spring-Spring-MVC"><a href="#Spring-Spring-MVC" class="headerlink" title="Spring/Spring MVC"></a>Spring/Spring MVC</h1><h2 id="90-为什么要使用-spring？"><a href="#90-为什么要使用-spring？" class="headerlink" title="90. 为什么要使用 spring？"></a>90. 为什么要使用 spring？</h2><blockquote>
+<ul>
+<li>spring 提供 ioc 技术，容器会帮你管理依赖的对象，从而不需要自己创建和管理依赖对象了，更轻松的实现了程序的解耦。</li>
+<li>spring 提供了事务支持，使得事务操作变的更加方便。</li>
+<li>spring 提供了面向切片编程，这样可以更方便的处理某一类的问题。</li>
+<li>更方便的框架集成，spring 可以很方便的集成其他框架，比如 MyBatis、hibernate 等。</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-eight/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-eight/" class="post-title-link" itemprop="url">java面试题71-80【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-27 17:58:35" itemprop="dateCreated datePublished" datetime="2019-07-27T17:58:35+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 20:31:03" itemprop="dateModified" datetime="2019-07-28T20:31:03+08:00">2019-07-28</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="71-如何避免-SQL-注入？"><a href="#71-如何避免-SQL-注入？" class="headerlink" title="71. 如何避免 SQL 注入？"></a>71. 如何避免 SQL 注入？</h2><blockquote>
+<ul>
+<li>使用预处理 PreparedStatement。</li>
+<li>使用正则表达式过滤掉字符中的特殊字符。</li>
+</ul>
+</blockquote>
+<h2 id="72-什么是-XSS-攻击，如何避免？"><a href="#72-什么是-XSS-攻击，如何避免？" class="headerlink" title="72. 什么是 XSS 攻击，如何避免？"></a>72. 什么是 XSS 攻击，如何避免？</h2><blockquote>
+<p>XSS 攻击：即跨站脚本攻击，它是 Web 程序中常见的漏洞。原理是攻击者往 Web 页面里插入恶意的脚本代码（css 代码、Javascript 代码等），当用户浏览该页面时，嵌入其中的脚本代码会被执行，从而达到恶意攻击用户的目的，如盗取用户 cookie、破坏页面结构、重定向到其他网站等。<br>预防 XSS 的核心是必须对输入的数据做过滤处理。</p>
+</blockquote>
+<h2 id="73-什么是-CSRF-攻击，如何避免？"><a href="#73-什么是-CSRF-攻击，如何避免？" class="headerlink" title="73. 什么是 CSRF 攻击，如何避免？"></a>73. 什么是 CSRF 攻击，如何避免？</h2><blockquote>
+<p>CSRF：Cross-Site Request Forgery（中文：跨站请求伪造），可以理解为攻击者盗用了你的身份，以你的名义发送恶意请求，比如：以你名义发送邮件、发消息、购买商品，虚拟货币转账等。<br>防御手段：</p>
+<ul>
+<li>验证请求来源地址；</li>
+<li>关键操作添加验证码；</li>
+<li>在请求地址添加 token 并验证。<br>异常</li>
+</ul>
+</blockquote>
+<h2 id="74-throw-和-throws-的区别？"><a href="#74-throw-和-throws-的区别？" class="headerlink" title="74. throw 和 throws 的区别？"></a>74. throw 和 throws 的区别？</h2><blockquote>
+<ul>
+<li>throw：是真实抛出一个异常。</li>
+<li>throws：是声明可能会抛出一个异常。</li>
+</ul>
+</blockquote>
+<h2 id="75-final、finally、finalize-有什么区别？"><a href="#75-final、finally、finalize-有什么区别？" class="headerlink" title="75. final、finally、finalize 有什么区别？"></a>75. final、finally、finalize 有什么区别？</h2><blockquote>
+<ul>
+<li>final：是修饰符，如果修饰类，此类不能被继承；如果修饰方法和变量，则表示此方法和此变量不能在被改变，只能使用。</li>
+<li>finally：是 try{} catch{} finally{} 最后一部分，表示不论发生任何情况都会执行，finally 部分可以省略，但如果 finally 部分存在，则一定会执行 finally 里面的代码。</li>
+<li>finalize： 是 Object 类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法。</li>
+</ul>
+</blockquote>
+<h2 id="76-try-catch-finally-中哪个部分可以省略？"><a href="#76-try-catch-finally-中哪个部分可以省略？" class="headerlink" title="76. try-catch-finally 中哪个部分可以省略？"></a>76. try-catch-finally 中哪个部分可以省略？</h2><blockquote>
+<p>try-catch-finally 其中 catch 和 finally 都可以被省略，但是不能同时省略，也就是说有 try 的时候，必须后面跟一个 catch 或者 finally。</p>
+</blockquote>
+<h2 id="77-try-catch-finally-中，如果-catch-中-return-了，finally-还会执行吗？"><a href="#77-try-catch-finally-中，如果-catch-中-return-了，finally-还会执行吗？" class="headerlink" title="77. try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？"></a>77. try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？</h2><blockquote>
+<p>finally 一定会执行，即使是 catch 中 return 了，catch 中的 return 会等 finally 中的代码执行完之后，才会执行。</p>
+</blockquote>
+<h2 id="78-常见的异常类有哪些？"><a href="#78-常见的异常类有哪些？" class="headerlink" title="78. 常见的异常类有哪些？"></a>78. 常见的异常类有哪些？</h2><blockquote>
+<ul>
+<li>NullPointerException 空指针异常</li>
+<li>ClassNotFoundException 指定类不存在</li>
+<li>NumberFormatException 字符串转换为数字异常</li>
+<li>IndexOutOfBoundsException 数组下标越界异常</li>
+<li>ClassCastException 数据类型转换异常</li>
+<li>FileNotFoundException 文件未找到异常</li>
+<li>NoSuchMethodException 方法不存在异常</li>
+<li>IOException IO 异常</li>
+<li>SocketException Socket 异常<br>网络</li>
+</ul>
+</blockquote>
+<h2 id="79-http-响应码-301-和-302-代表的是什么？有什么区别？"><a href="#79-http-响应码-301-和-302-代表的是什么？有什么区别？" class="headerlink" title="79. http 响应码 301 和 302 代表的是什么？有什么区别？"></a>79. http 响应码 301 和 302 代表的是什么？有什么区别？</h2><blockquote>
+<p>301：永久重定向。<br>302：暂时重定向。<br>它们的区别是，301 对搜索引擎优化（SEO）更加有利；302 有被提示为网络拦截的风险。</p>
+</blockquote>
+<h2 id="80-forward-和-redirect-的区别？"><a href="#80-forward-和-redirect-的区别？" class="headerlink" title="80. forward 和 redirect 的区别？"></a>80. forward 和 redirect 的区别？</h2><blockquote>
+<p>forward 是转发 和 redirect 是重定向：</p>
+<ul>
+<li>地址栏 url 显示：foward url 不会发生改变，redirect url 会发生改变；</li>
+<li>数据共享：forward 可以共享 request 里的数据，redirect 不能共享；</li>
+<li>效率：forward 比 redirect 效率高。</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-seven/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-seven/" class="post-title-link" itemprop="url">java面试题61-70【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-27 17:38:35" itemprop="dateCreated datePublished" datetime="2019-07-27T17:38:35+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 20:26:37" itemprop="dateModified" datetime="2019-07-28T20:26:37+08:00">2019-07-28</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="61-为什么要使用克隆？"><a href="#61-为什么要使用克隆？" class="headerlink" title="61. 为什么要使用克隆？"></a>61. 为什么要使用克隆？</h2><p>克隆的对象可能包含一些已经修改过的属性，而 new 出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠克隆方法了。</p>
+<h2 id="62-如何实现对象克隆？"><a href="#62-如何实现对象克隆？" class="headerlink" title="62. 如何实现对象克隆？"></a>62. 如何实现对象克隆？</h2><blockquote>
+<ul>
+<li>实现 Cloneable 接口并重写 Object 类中的 clone() 方法。</li>
+<li>实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。</li>
+</ul>
+</blockquote>
+<h1 id="63-深拷贝和浅拷贝区别是什么？"><a href="#63-深拷贝和浅拷贝区别是什么？" class="headerlink" title="63. 深拷贝和浅拷贝区别是什么？"></a>63. 深拷贝和浅拷贝区别是什么？</h1><blockquote>
+<ul>
+<li>浅克隆：当对象被复制时只复制它本身和其中包含的值类型的成员变量，而引用类型的成员对象并没有复制。</li>
+<li>深克隆：除了对象本身被复制外，对象所包含的所有成员变量也将复制。<br>Java Web</li>
+</ul>
+</blockquote>
+<h2 id="64-JSP-和-servlet-有什么区别？"><a href="#64-JSP-和-servlet-有什么区别？" class="headerlink" title="64. JSP 和 servlet 有什么区别？"></a>64. JSP 和 servlet 有什么区别？</h2><blockquote>
+<p>JSP 是 servlet 技术的扩展，本质上就是 servlet 的简易方式。<br>    servlet 和 JSP 最主要的不同点在于，servlet 的应用逻辑是在 Java 文件中，并且完全从表示层中的 html 里分离开来，而 JSP 的情况是 Java 和 html 可以组合成一个扩展名为 JSP 的文件。JSP 侧重于视图，servlet 主要用于控制逻辑。</p>
+</blockquote>
+<h2 id="65-JSP-有哪些内置对象？作用分别是什么？"><a href="#65-JSP-有哪些内置对象？作用分别是什么？" class="headerlink" title="65. JSP 有哪些内置对象？作用分别是什么？"></a>65. JSP 有哪些内置对象？作用分别是什么？</h2><blockquote>
+<p>JSP 有 9 大内置对象：</p>
+<ul>
+<li>request：封装客户端的请求，其中包含来自 get 或 post 请求的参数；</li>
+<li>response：封装服务器对客户端的响应；</li>
+<li>pageContext：通过该对象可以获取其他对象；</li>
+<li>session：封装用户会话的对象；</li>
+<li>application：封装服务器运行环境的对象；</li>
+<li>out：输出服务器响应的输出流对象；</li>
+<li>config：Web 应用的配置对象；</li>
+<li>page：JSP 页面本身（相当于 Java 程序中的 this）；</li>
+<li>exception：封装页面抛出异常的对象。</li>
+</ul>
+</blockquote>
+<h2 id="66-说一下-JSP-的-4-种作用域？"><a href="#66-说一下-JSP-的-4-种作用域？" class="headerlink" title="66. 说一下 JSP 的 4 种作用域？"></a>66. 说一下 JSP 的 4 种作用域？</h2><blockquote>
+<ul>
+<li>page：代表与一个页面相关的对象和属性。</li>
+<li>request：代表与客户端发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个 Web 组件；需要在页面显示的临时数据可以置于此作用域。</li>
+<li>session：代表与某个用户与服务器建立的一次会话相关的对象和属性。跟某个用户相关的数据应该放在用户自己的 session 中。</li>
+<li>application：代表与整个 Web 应用程序相关的对象和属性，它实质上是跨越整个 Web 应用程序，包括多个页面、请求和会话的一个全局作用域。</li>
+</ul>
+</blockquote>
+<h2 id="67-session-和-cookie-有什么区别？"><a href="#67-session-和-cookie-有什么区别？" class="headerlink" title="67. session 和 cookie 有什么区别？"></a>67. session 和 cookie 有什么区别？</h2><blockquote>
+<ul>
+<li>存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。</li>
+<li>安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。</li>
+<li>容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。</li>
+<li>存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。</li>
+</ul>
+</blockquote>
+<h2 id="68-说一下-session-的工作原理？"><a href="#68-说一下-session-的工作原理？" class="headerlink" title="68. 说一下 session 的工作原理？"></a>68. 说一下 session 的工作原理？</h2><blockquote>
+<p>session 的工作原理是客户端登录完成之后，服务器会创建对应的 session，session 创建完之后，会把 session 的 id 发送给客户端，客户端再存储到浏览器中。这样客户端每次访问服务器时，都会带着 sessionid，服务器拿到 sessionid 之后，在内存找到与之对应的 session 这样就可以正常工作了。</p>
+</blockquote>
+<h2 id="69-如果客户端禁止-cookie-能实现-session-还能用吗？"><a href="#69-如果客户端禁止-cookie-能实现-session-还能用吗？" class="headerlink" title="69. 如果客户端禁止 cookie 能实现 session 还能用吗？"></a>69. 如果客户端禁止 cookie 能实现 session 还能用吗？</h2><p>可以用，session 只是依赖 cookie 存储 sessionid，如果 cookie 被禁用了，可以使用 url 中添加 sessionid 的方式保证 session 能正常使用。</p>
+<h2 id="70-spring-mvc-和-struts-的区别是什么？"><a href="#70-spring-mvc-和-struts-的区别是什么？" class="headerlink" title="70. spring mvc 和 struts 的区别是什么？"></a>70. spring mvc 和 struts 的区别是什么？</h2><blockquote>
+<ul>
+<li>拦截级别：struts2 是类级别的拦截；spring mvc 是方法级别的拦截。</li>
+<li>数据独立性：spring mvc 的方法之间基本上独立的，独享 request 和 response 数据，请求数据通过参数获取，处理结果通过 ModelMap 交回给框架，方法之间不共享变量；而 struts2 虽然方法之间也是独立的，但其所有 action 变量是共享的，这不会影响程序运行，却给我们编码和读程序时带来了一定的麻烦。</li>
+<li>拦截机制：struts2 有以自己的 interceptor 机制，spring mvc 用的是独立的 aop 方式，这样导致struts2 的配置文件量比 spring mvc 大。</li>
+<li>对 ajax 的支持：spring mvc 集成了ajax，所有 ajax 使用很方便，只需要一个注解 @ResponseBody 就可以实现了；而 struts2 一般需要安装插件或者自己写代码才行。</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-six/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/java-six/" class="post-title-link" itemprop="url">java面试题51-60【转】</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-26 17:38:35" itemprop="dateCreated datePublished" datetime="2019-07-26T17:38:35+08:00">2019-07-26</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 20:22:50" itemprop="dateModified" datetime="2019-07-28T20:22:50+08:00">2019-07-28</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="51-ThreadLocal-是什么？有哪些使用场景？"><a href="#51-ThreadLocal-是什么？有哪些使用场景？" class="headerlink" title="51. ThreadLocal 是什么？有哪些使用场景？"></a>51. ThreadLocal 是什么？有哪些使用场景？</h2><blockquote>
+<p>ThreadLocal 为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。<br>ThreadLocal 的经典使用场景是数据库连接和 session 管理等。</p>
+</blockquote>
+<h2 id="52-说一下-synchronized-底层实现原理？"><a href="#52-说一下-synchronized-底层实现原理？" class="headerlink" title="52. 说一下 synchronized 底层实现原理？"></a>52. 说一下 synchronized 底层实现原理？</h2><blockquote>
+<p>synchronized 是由一对 monitorenter/monitorexit 指令实现的，monitor 对象是同步的基本实现单元。在 Java 6 之前，monitor 的实现完全是依靠操作系统内部的互斥锁，因为需要进行用户态到内核态的切换，所以同步操作是一个无差别的重量级操作，性能也很低。但在 Java 6 的时候，Java 虚拟机 对此进行了大刀阔斧地改进，提供了三种不同的 monitor 实现，也就是常说的三种不同的锁：偏向锁（Biased Locking）、轻量级锁和重量级锁，大大改进了其性能。</p>
+</blockquote>
+<h2 id="53-synchronized-和-volatile-的区别是什么？"><a href="#53-synchronized-和-volatile-的区别是什么？" class="headerlink" title="53. synchronized 和 volatile 的区别是什么？"></a>53. synchronized 和 volatile 的区别是什么？</h2><blockquote>
+<ul>
+<li>volatile 是变量修饰符；synchronized 是修饰类、方法、代码段。</li>
+<li>volatile 仅能实现变量的修改可见性，不能保证原子性；而 synchronized 则可以保证变量的修改可见性和原子性。</li>
+<li>volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。</li>
+</ul>
+</blockquote>
+<h2 id="54-synchronized-和-Lock-有什么区别？"><a href="#54-synchronized-和-Lock-有什么区别？" class="headerlink" title="54. synchronized 和 Lock 有什么区别？"></a>54. synchronized 和 Lock 有什么区别？</h2><blockquote>
+<ul>
+<li>synchronized 可以给类、方法、代码块加锁；而 lock 只能给代码块加锁。</li>
+<li>synchronized 不需要手动获取锁和释放锁，使用简单，发生异常会自动释放锁，不会造成死锁；而 lock 需要自己加锁和释放锁，如果使用不当没有 unLock()去释放锁就会造成死锁。</li>
+<li>通过 Lock 可以知道有没有成功获取锁，而 synchronized 却无法办到。</li>
+</ul>
+</blockquote>
+<h2 id="55-synchronized-和-ReentrantLock-区别是什么？"><a href="#55-synchronized-和-ReentrantLock-区别是什么？" class="headerlink" title="55. synchronized 和 ReentrantLock 区别是什么？"></a>55. synchronized 和 ReentrantLock 区别是什么？</h2><blockquote>
+<ul>
+<li>synchronized 早期的实现比较低效，对比 ReentrantLock，大多数场景性能都相差较大，但是在 Java 6 中对 synchronized 进行了非常多的改进。</li>
+<li>主要区别如下：</li>
+<li>ReentrantLock 使用起来比较灵活，但是必须有释放锁的配合动作；</li>
+<li>ReentrantLock 必须手动获取与释放锁，而 synchronized 不需要手动释放和开启锁；</li>
+<li>ReentrantLock 只适用于代码块锁，而 synchronized 可用于修饰方法、代码块等。</li>
+<li>olatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。</li>
+</ul>
+</blockquote>
+<h2 id="56-说一下-atomic-的原理？"><a href="#56-说一下-atomic-的原理？" class="headerlink" title="56. 说一下 atomic 的原理？"></a>56. 说一下 atomic 的原理？</h2><blockquote>
+<ul>
+<li>atomic 主要利用 CAS (Compare And Wwap) 和 volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。<br>反射</li>
+</ul>
+</blockquote>
+<h2 id="57-什么是反射？"><a href="#57-什么是反射？" class="headerlink" title="57. 什么是反射？"></a>57. 什么是反射？</h2><blockquote>
+<ul>
+<li>反射是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制。</li>
+</ul>
+</blockquote>
+<h2 id="58-什么是-Java-序列化？什么情况下需要序列化？"><a href="#58-什么是-Java-序列化？什么情况下需要序列化？" class="headerlink" title="58. 什么是 Java 序列化？什么情况下需要序列化？"></a>58. 什么是 Java 序列化？什么情况下需要序列化？</h2><blockquote>
+<ul>
+<li>Java 序列化是为了保存各种对象在内存中的状态，并且可以把保存的对象状态再读出来。<br>以下情况需要使用 Java 序列化：</li>
+<li>想把的内存中的对象状态保存到一个文件中或者数据库中时候；</li>
+<li>想用套接字在网络上传送对象的时候；</li>
+<li>想通过RMI（远程方法调用）传输对象的时候。</li>
+</ul>
+</blockquote>
+<h2 id="59-动态代理是什么？有哪些应用？"><a href="#59-动态代理是什么？有哪些应用？" class="headerlink" title="59. 动态代理是什么？有哪些应用？"></a>59. 动态代理是什么？有哪些应用？</h2><blockquote>
+<p>动态代理是运行时动态生成代理类。<br>动态代理的应用有 spring aop、hibernate 数据查询、测试框架的后端 mock、rpc，Java注解对象获取等。</p>
+</blockquote>
+<h2 id="60-怎么实现动态代理？"><a href="#60-怎么实现动态代理？" class="headerlink" title="60. 怎么实现动态代理？"></a>60. 怎么实现动态代理？</h2><blockquote>
+<p>DK 原生动态代理和 cglib 动态代理。JDK 原生动态代理是基于接口实现的，而 cglib 是基于继承当前类的子类实现的对象拷贝。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+<div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-five/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -441,13 +1615,23 @@
                 
               
 
-              <time title="创建时间：2019-07-26 17:00:35 / 修改时间：16:47:16" itemprop="dateCreated datePublished" datetime="2019-07-26T17:00:35+08:00">2019-07-26</time>
+              <time title="创建时间：2019-07-26 16:59:35" itemprop="dateCreated datePublished" datetime="2019-07-26T16:59:35+08:00">2019-07-26</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 20:22:34" itemprop="dateModified" datetime="2019-07-28T20:22:34+08:00">2019-07-28</time>
+              </span>
             
           
 
@@ -566,226 +1750,6 @@
 <li>尽量降低锁的使用粒度，尽量不要几个功能用同一把锁。</li>
 <li>尽量减少同步的代码块。</li>
 </ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-<div>
-  
-</div>
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-six/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="远远不够嗨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/java-six/" class="post-title-link" itemprop="url">java面试题51-60【转】</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-26 17:00:35 / 修改时间：16:53:12" itemprop="dateCreated datePublished" datetime="2019-07-26T17:00:35+08:00">2019-07-26</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="51-ThreadLocal-是什么？有哪些使用场景？"><a href="#51-ThreadLocal-是什么？有哪些使用场景？" class="headerlink" title="51. ThreadLocal 是什么？有哪些使用场景？"></a>51. ThreadLocal 是什么？有哪些使用场景？</h2><blockquote>
-<p>ThreadLocal 为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。<br>ThreadLocal 的经典使用场景是数据库连接和 session 管理等。</p>
-</blockquote>
-<h2 id="52-说一下-synchronized-底层实现原理？"><a href="#52-说一下-synchronized-底层实现原理？" class="headerlink" title="52. 说一下 synchronized 底层实现原理？"></a>52. 说一下 synchronized 底层实现原理？</h2><blockquote>
-<p>synchronized 是由一对 monitorenter/monitorexit 指令实现的，monitor 对象是同步的基本实现单元。在 Java 6 之前，monitor 的实现完全是依靠操作系统内部的互斥锁，因为需要进行用户态到内核态的切换，所以同步操作是一个无差别的重量级操作，性能也很低。但在 Java 6 的时候，Java 虚拟机 对此进行了大刀阔斧地改进，提供了三种不同的 monitor 实现，也就是常说的三种不同的锁：偏向锁（Biased Locking）、轻量级锁和重量级锁，大大改进了其性能。</p>
-</blockquote>
-<h2 id="53-synchronized-和-volatile-的区别是什么？"><a href="#53-synchronized-和-volatile-的区别是什么？" class="headerlink" title="53. synchronized 和 volatile 的区别是什么？"></a>53. synchronized 和 volatile 的区别是什么？</h2><blockquote>
-<ul>
-<li>volatile 是变量修饰符；synchronized 是修饰类、方法、代码段。</li>
-<li>volatile 仅能实现变量的修改可见性，不能保证原子性；而 synchronized 则可以保证变量的修改可见性和原子性。</li>
-<li>volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。</li>
-</ul>
-</blockquote>
-<h2 id="54-synchronized-和-Lock-有什么区别？"><a href="#54-synchronized-和-Lock-有什么区别？" class="headerlink" title="54. synchronized 和 Lock 有什么区别？"></a>54. synchronized 和 Lock 有什么区别？</h2><blockquote>
-<ul>
-<li>synchronized 可以给类、方法、代码块加锁；而 lock 只能给代码块加锁。</li>
-<li>synchronized 不需要手动获取锁和释放锁，使用简单，发生异常会自动释放锁，不会造成死锁；而 lock 需要自己加锁和释放锁，如果使用不当没有 unLock()去释放锁就会造成死锁。</li>
-<li>通过 Lock 可以知道有没有成功获取锁，而 synchronized 却无法办到。</li>
-</ul>
-</blockquote>
-<h2 id="55-synchronized-和-ReentrantLock-区别是什么？"><a href="#55-synchronized-和-ReentrantLock-区别是什么？" class="headerlink" title="55. synchronized 和 ReentrantLock 区别是什么？"></a>55. synchronized 和 ReentrantLock 区别是什么？</h2><blockquote>
-<ul>
-<li>synchronized 早期的实现比较低效，对比 ReentrantLock，大多数场景性能都相差较大，但是在 Java 6 中对 synchronized 进行了非常多的改进。</li>
-<li>主要区别如下：</li>
-<li>ReentrantLock 使用起来比较灵活，但是必须有释放锁的配合动作；</li>
-<li>ReentrantLock 必须手动获取与释放锁，而 synchronized 不需要手动释放和开启锁；</li>
-<li>ReentrantLock 只适用于代码块锁，而 synchronized 可用于修饰方法、代码块等。</li>
-<li>olatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。</li>
-</ul>
-</blockquote>
-<h2 id="56-说一下-atomic-的原理？"><a href="#56-说一下-atomic-的原理？" class="headerlink" title="56. 说一下 atomic 的原理？"></a>56. 说一下 atomic 的原理？</h2><blockquote>
-<ul>
-<li>atomic 主要利用 CAS (Compare And Wwap) 和 volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。<br>反射</li>
-</ul>
-</blockquote>
-<h2 id="57-什么是反射？"><a href="#57-什么是反射？" class="headerlink" title="57. 什么是反射？"></a>57. 什么是反射？</h2><blockquote>
-<ul>
-<li>反射是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制。</li>
-</ul>
-</blockquote>
-<h2 id="58-什么是-Java-序列化？什么情况下需要序列化？"><a href="#58-什么是-Java-序列化？什么情况下需要序列化？" class="headerlink" title="58. 什么是 Java 序列化？什么情况下需要序列化？"></a>58. 什么是 Java 序列化？什么情况下需要序列化？</h2><blockquote>
-<ul>
-<li>Java 序列化是为了保存各种对象在内存中的状态，并且可以把保存的对象状态再读出来。<br>以下情况需要使用 Java 序列化：</li>
-<li>想把的内存中的对象状态保存到一个文件中或者数据库中时候；</li>
-<li>想用套接字在网络上传送对象的时候；</li>
-<li>想通过RMI（远程方法调用）传输对象的时候。</li>
-</ul>
-</blockquote>
-<h2 id="59-动态代理是什么？有哪些应用？"><a href="#59-动态代理是什么？有哪些应用？" class="headerlink" title="59. 动态代理是什么？有哪些应用？"></a>59. 动态代理是什么？有哪些应用？</h2><blockquote>
-<p>动态代理是运行时动态生成代理类。<br>动态代理的应用有 spring aop、hibernate 数据查询、测试框架的后端 mock、rpc，Java注解对象获取等。</p>
-</blockquote>
-<h2 id="60-怎么实现动态代理？"><a href="#60-怎么实现动态代理？" class="headerlink" title="60. 怎么实现动态代理？"></a>60. 怎么实现动态代理？</h2><blockquote>
-<p>DK 原生动态代理和 cglib 动态代理。JDK 原生动态代理是基于接口实现的，而 cglib 是基于继承当前类的子类实现的对象拷贝。</p>
 </blockquote>
 
           
@@ -1725,7 +2689,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1830,7 +2794,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.4k字</span>
+  <span class="post-count">博客全站共11k字</span>
 </div>
 
         

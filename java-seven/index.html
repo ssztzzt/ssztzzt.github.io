@@ -95,13 +95,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="远远不够嗨">
-<meta property="og:url" content="http://ssztzzt.github.io/tags/面试/index.html">
+  <meta name="description" content="61. 为什么要使用克隆？克隆的对象可能包含一些已经修改过的属性，而 new 出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠克隆方法了。 62. 如何实现对象克隆？  实现 Cloneable 接口并重写 Object 类中的 clone() 方法。 实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。   6">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面试题61-70【转】">
+<meta property="og:url" content="http://ssztzzt.github.io/java-seven/index.html">
 <meta property="og:site_name" content="远远不够嗨">
+<meta property="og:description" content="61. 为什么要使用克隆？克隆的对象可能包含一些已经修改过的属性，而 new 出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠克隆方法了。 62. 如何实现对象克隆？  实现 Cloneable 接口并重写 Object 类中的 clone() 方法。 实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。   6">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T12:26:37.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="远远不够嗨">
+<meta name="twitter:title" content="java面试题61-70【转】">
+<meta name="twitter:description" content="61. 为什么要使用克隆？克隆的对象可能包含一些已经修改过的属性，而 new 出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠克隆方法了。 62. 如何实现对象克隆？  实现 Cloneable 接口并重写 Object 类中的 clone() 方法。 实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。   6">
 
 
 
@@ -111,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://ssztzzt.github.io/tags/面试/">
+  <link rel="canonical" href="http://ssztzzt.github.io/java-seven/">
 
 
 
@@ -122,7 +127,7 @@
 </script>
 
   
-  <title>标签: 面试 | 远远不够嗨</title>
+  <title>java面试题61-70【转】 | 远远不够嗨</title>
   
 
 
@@ -170,7 +175,7 @@
   
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/ssztzzt" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
@@ -277,7 +282,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -375,317 +380,288 @@
           
           
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>面试<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssztzzt.github.io/java-seven/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远远不够嗨">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/java-ten/" itemprop="url">
-            
-              <span itemprop="name">java面试题91-100【转】</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">java面试题61-70【转】
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-28T17:30:35+08:00" content="2019-07-28">
-          07-28
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-27 17:38:35" itemprop="dateCreated datePublished" datetime="2019-07-27T17:38:35+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 20:26:37" itemprop="dateModified" datetime="2019-07-28T20:26:37+08:00">2019-07-28</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-nine/" itemprop="url">
-            
-              <span itemprop="name">java面试题81-90【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-28T17:00:35+08:00" content="2019-07-28">
-          07-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-eight/" itemprop="url">
-            
-              <span itemprop="name">java面试题71-80【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-27T17:58:35+08:00" content="2019-07-27">
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-seven/" itemprop="url">
-            
-              <span itemprop="name">java面试题61-70【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-27T17:38:35+08:00" content="2019-07-27">
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-six/" itemprop="url">
-            
-              <span itemprop="name">java面试题51-60【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-26T17:38:35+08:00" content="2019-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-five/" itemprop="url">
-            
-              <span itemprop="name">java面试题41-50【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-26T16:59:35+08:00" content="2019-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-four/" itemprop="url">
-            
-              <span itemprop="name">java面试题31-40【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-25T16:00:35+08:00" content="2019-07-25">
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-three/" itemprop="url">
-            
-              <span itemprop="name">java面试题21-30【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-25T16:00:35+08:00" content="2019-07-25">
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-tow/" itemprop="url">
-            
-              <span itemprop="name">java面试题11-20【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T17:50:35+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/java-one/" itemprop="url">
-            
-              <span itemprop="name">java面试题1-10【转】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-23T07:04:35+08:00" content="2019-07-23">
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="61-为什么要使用克隆？"><a href="#61-为什么要使用克隆？" class="headerlink" title="61. 为什么要使用克隆？"></a>61. 为什么要使用克隆？</h2><p>克隆的对象可能包含一些已经修改过的属性，而 new 出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠克隆方法了。</p>
+<h2 id="62-如何实现对象克隆？"><a href="#62-如何实现对象克隆？" class="headerlink" title="62. 如何实现对象克隆？"></a>62. 如何实现对象克隆？</h2><blockquote>
+<ul>
+<li>实现 Cloneable 接口并重写 Object 类中的 clone() 方法。</li>
+<li>实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆。</li>
+</ul>
+</blockquote>
+<h1 id="63-深拷贝和浅拷贝区别是什么？"><a href="#63-深拷贝和浅拷贝区别是什么？" class="headerlink" title="63. 深拷贝和浅拷贝区别是什么？"></a>63. 深拷贝和浅拷贝区别是什么？</h1><blockquote>
+<ul>
+<li>浅克隆：当对象被复制时只复制它本身和其中包含的值类型的成员变量，而引用类型的成员对象并没有复制。</li>
+<li>深克隆：除了对象本身被复制外，对象所包含的所有成员变量也将复制。<br>Java Web</li>
+</ul>
+</blockquote>
+<h2 id="64-JSP-和-servlet-有什么区别？"><a href="#64-JSP-和-servlet-有什么区别？" class="headerlink" title="64. JSP 和 servlet 有什么区别？"></a>64. JSP 和 servlet 有什么区别？</h2><blockquote>
+<p>JSP 是 servlet 技术的扩展，本质上就是 servlet 的简易方式。<br>    servlet 和 JSP 最主要的不同点在于，servlet 的应用逻辑是在 Java 文件中，并且完全从表示层中的 html 里分离开来，而 JSP 的情况是 Java 和 html 可以组合成一个扩展名为 JSP 的文件。JSP 侧重于视图，servlet 主要用于控制逻辑。</p>
+</blockquote>
+<h2 id="65-JSP-有哪些内置对象？作用分别是什么？"><a href="#65-JSP-有哪些内置对象？作用分别是什么？" class="headerlink" title="65. JSP 有哪些内置对象？作用分别是什么？"></a>65. JSP 有哪些内置对象？作用分别是什么？</h2><blockquote>
+<p>JSP 有 9 大内置对象：</p>
+<ul>
+<li>request：封装客户端的请求，其中包含来自 get 或 post 请求的参数；</li>
+<li>response：封装服务器对客户端的响应；</li>
+<li>pageContext：通过该对象可以获取其他对象；</li>
+<li>session：封装用户会话的对象；</li>
+<li>application：封装服务器运行环境的对象；</li>
+<li>out：输出服务器响应的输出流对象；</li>
+<li>config：Web 应用的配置对象；</li>
+<li>page：JSP 页面本身（相当于 Java 程序中的 this）；</li>
+<li>exception：封装页面抛出异常的对象。</li>
+</ul>
+</blockquote>
+<h2 id="66-说一下-JSP-的-4-种作用域？"><a href="#66-说一下-JSP-的-4-种作用域？" class="headerlink" title="66. 说一下 JSP 的 4 种作用域？"></a>66. 说一下 JSP 的 4 种作用域？</h2><blockquote>
+<ul>
+<li>page：代表与一个页面相关的对象和属性。</li>
+<li>request：代表与客户端发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个 Web 组件；需要在页面显示的临时数据可以置于此作用域。</li>
+<li>session：代表与某个用户与服务器建立的一次会话相关的对象和属性。跟某个用户相关的数据应该放在用户自己的 session 中。</li>
+<li>application：代表与整个 Web 应用程序相关的对象和属性，它实质上是跨越整个 Web 应用程序，包括多个页面、请求和会话的一个全局作用域。</li>
+</ul>
+</blockquote>
+<h2 id="67-session-和-cookie-有什么区别？"><a href="#67-session-和-cookie-有什么区别？" class="headerlink" title="67. session 和 cookie 有什么区别？"></a>67. session 和 cookie 有什么区别？</h2><blockquote>
+<ul>
+<li>存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。</li>
+<li>安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。</li>
+<li>容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。</li>
+<li>存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。</li>
+</ul>
+</blockquote>
+<h2 id="68-说一下-session-的工作原理？"><a href="#68-说一下-session-的工作原理？" class="headerlink" title="68. 说一下 session 的工作原理？"></a>68. 说一下 session 的工作原理？</h2><blockquote>
+<p>session 的工作原理是客户端登录完成之后，服务器会创建对应的 session，session 创建完之后，会把 session 的 id 发送给客户端，客户端再存储到浏览器中。这样客户端每次访问服务器时，都会带着 sessionid，服务器拿到 sessionid 之后，在内存找到与之对应的 session 这样就可以正常工作了。</p>
+</blockquote>
+<h2 id="69-如果客户端禁止-cookie-能实现-session-还能用吗？"><a href="#69-如果客户端禁止-cookie-能实现-session-还能用吗？" class="headerlink" title="69. 如果客户端禁止 cookie 能实现 session 还能用吗？"></a>69. 如果客户端禁止 cookie 能实现 session 还能用吗？</h2><p>可以用，session 只是依赖 cookie 存储 sessionid，如果 cookie 被禁用了，可以使用 url 中添加 sessionid 的方式保证 session 能正常使用。</p>
+<h2 id="70-spring-mvc-和-struts-的区别是什么？"><a href="#70-spring-mvc-和-struts-的区别是什么？" class="headerlink" title="70. spring mvc 和 struts 的区别是什么？"></a>70. spring mvc 和 struts 的区别是什么？</h2><blockquote>
+<ul>
+<li>拦截级别：struts2 是类级别的拦截；spring mvc 是方法级别的拦截。</li>
+<li>数据独立性：spring mvc 的方法之间基本上独立的，独享 request 和 response 数据，请求数据通过参数获取，处理结果通过 ModelMap 交回给框架，方法之间不共享变量；而 struts2 虽然方法之间也是独立的，但其所有 action 变量是共享的，这不会影响程序运行，却给我们编码和读程序时带来了一定的麻烦。</li>
+<li>拦截机制：struts2 有以自己的 interceptor 机制，spring mvc 用的是独立的 aop 方式，这样导致struts2 的配置文件量比 spring mvc 大。</li>
+<li>对 ajax 的支持：spring mvc 集成了ajax，所有 ajax 使用很方便，只需要一个注解 @ResponseBody 就可以实现了；而 struts2 一般需要安装插件或者自己写代码才行。</li>
+</ul>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+      
+    
+
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-sign-language"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java-six/" rel="next" title="java面试题51-60【转】">
+                <i class="fa fa-chevron-left"></i> java面试题51-60【转】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java-eight/" rel="prev" title="java面试题71-80【转】">
+                java面试题71-80【转】 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTUzOS8yMjA1MA=="></div>
+    </div>
+
+  
+
         </div>
         
         
@@ -704,8 +680,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -791,6 +776,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#61-为什么要使用克隆？"><span class="nav-text">61. 为什么要使用克隆？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#62-如何实现对象克隆？"><span class="nav-text">62. 如何实现对象克隆？</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#63-深拷贝和浅拷贝区别是什么？"><span class="nav-text">63. 深拷贝和浅拷贝区别是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#64-JSP-和-servlet-有什么区别？"><span class="nav-text">64. JSP 和 servlet 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#65-JSP-有哪些内置对象？作用分别是什么？"><span class="nav-text">65. JSP 有哪些内置对象？作用分别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#66-说一下-JSP-的-4-种作用域？"><span class="nav-text">66. 说一下 JSP 的 4 种作用域？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#67-session-和-cookie-有什么区别？"><span class="nav-text">67. session 和 cookie 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#68-说一下-session-的工作原理？"><span class="nav-text">68. 说一下 session 的工作原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#69-如果客户端禁止-cookie-能实现-session-还能用吗？"><span class="nav-text">69. 如果客户端禁止 cookie 能实现 session 还能用吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#70-spring-mvc-和-struts-的区别是什么？"><span class="nav-text">70. spring mvc 和 struts 的区别是什么？</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -923,6 +925,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -943,6 +949,26 @@
 
 
 
+
+  
+    
+
+
+<script>
+  window.livereOptions = {
+    refer: 'java-seven/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
 
